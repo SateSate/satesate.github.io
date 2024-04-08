@@ -1,0 +1,26 @@
+@import "./utilities/reset.scss";
+@import "./utilities/type.scss";
+@import "./utilities/variables.scss";
+
+// components
+@import "./components/banner.scss";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.description-text {
+  font-size: 45px;
+  line-height: 1.22;
+  &.with-margin {
+    margin: 160px 0 120px;
+  }
+}

@@ -1,0 +1,142 @@
+.banner-style1 {
+  background: url("../img/VideoBG.png") no-repeat bottom;
+  background-size: 100% 100%;
+  height: 100vh;
+  @include flex(row, center, center);
+  position: relative;
+  width: 100%;
+  .banner-text {
+    font-size: 35px;
+    color: $white;
+    line-height: 1.29;
+    span {
+      display: block;
+      text-align: right;
+    }
+  }
+  .logo {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 172px;
+    @include backdrop-filter();
+    border-radius: 20px;
+  }
+  .navbar {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 26px 40px;
+    @include backdrop-filter();
+    border-radius: 20px;
+    ul {
+      @include flex(row, center, space-between);
+      gap: 40px;
+      li {
+        flex: 1;
+        a {
+          color: $white;
+          font-size: 18px;
+          width: max-content;
+          display: block;
+          text-transform: uppercase;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner-style2 {
+  background: url("../img/banner-2.png") no-repeat bottom;
+  background-size: 100% 100%;
+  height: 100vh;
+  @include flex(row, flex-start, center);
+  position: relative;
+  padding: 0 35px;
+  .banner-text {
+    font-size: 35px;
+    color: $white;
+    line-height: 1.29;
+    text-align: center;
+    color: $primary;
+    opacity: 0.5;
+    margin-top: 220px;
+  }
+  .navbar {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    right: 35px;
+    padding: 26px 40px;
+    @include backdrop-filter();
+    border-radius: 20px;
+    @include flex(row, center, space-between);
+    ul {
+      @include flex(row, center, space-between);
+      gap: 40px;
+      li {
+        flex: 1;
+        a {
+          color: $primary;
+          font-size: 15px;
+          width: max-content;
+          display: block;
+          text-transform: uppercase;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner-style3 {
+  background: url("../img/VideoBG.png") no-repeat bottom;
+  background-size: 100% 100%;
+  height: 100vh;
+  @include flex(row, center, center);
+  position: relative;
+  padding: 0 35px;
+  .banner-text {
+    font-size: 35px;
+    color: $white;
+    line-height: 1.29;
+    span {
+      display: block;
+      text-align: right;
+    }
+  }
+  .navbar {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    right: 35px;
+    padding: 26px 40px;
+    @include backdrop-filter();
+    border-radius: 20px;
+    @include flex(row, center, space-between);
+    ul {
+      @include flex(row, center, space-between);
+      gap: 40px;
+      li {
+        flex: 1;
+        a {
+          color: $white;
+          font-size: 15px;
+          width: max-content;
+          display: block;
+          text-transform: uppercase;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
