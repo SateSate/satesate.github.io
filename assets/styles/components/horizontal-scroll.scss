@@ -1,6 +1,8 @@
 .slide {
   width: 100vw;
   height: 100vh;
+  // background-color: $gray;
+
   .container {
     height: 100%;
   }
@@ -10,6 +12,7 @@
     text-align: right;
     color: $white;
     position: relative;
+
     .img {
       width: 50%;
       height: 80%;
@@ -45,6 +48,7 @@
   display: flex;
   width: 300vw;
   position: relative;
+  background-color: $gray;
 }
 
 .horizontal-scroll-wrapper {

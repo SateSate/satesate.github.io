@@ -19,12 +19,12 @@ gsap.to(sections, {
       }),
     onLeave: () =>
       gsap.to(".horizontal-scroll", {
-        backgroundColor: "#fbfbfb",
+        backgroundColor: "#d8d8d8",
         duration: 1,
       }),
     onLeaveBack: () =>
       gsap.to(".horizontal-scroll", {
-        backgroundColor: "#fbfbfb",
+        backgroundColor: "#d8d8d8",
         duration: 1,
       }),
     onEnterBack: () =>
