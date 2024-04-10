@@ -46,3 +46,18 @@
   width: 300vw;
   position: relative;
 }
+
+.horizontal-scroll-wrapper {
+  overflow: hidden;
+}
+
+.big-text {
+  position: absolute;
+  width: 100%;
+  font-size: 240px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.4);
+  bottom: 0;
+  left: 5%;
+  z-index: 9;
+}

@@ -1,0 +1,15 @@
+footer {
+  min-height: 100px;
+  @include flex(row, center, space-between);
+  font-size: 15px;
+  line-height: 3.33;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  .col {
+    text-align: center;
+  }
+  span {
+    display: block;
+    text-transform: uppercase;
+  }
+}

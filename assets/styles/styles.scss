@@ -5,16 +5,21 @@
 // components
 @import "./components/banner.scss";
 @import "./components/horizontal-scroll.scss";
+@import "./components/slider.scss";
+@import "./components/quote.scss";
+@import "./components/category.scss";
+@import "./components/footer.scss";
 
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
+  background-color: $bg;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1470px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -27,13 +32,9 @@ body {
   }
 }
 
-.big-text {
-  position: absolute;
-  width: 100%;
-  font-size: 280px;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.4);
-  bottom: 0;
-  left: 5%;
-  z-index: 9;
+.category-text {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }

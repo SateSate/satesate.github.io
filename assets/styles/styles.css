@@ -22,6 +22,7 @@ dd {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -80,8 +81,6 @@ select {
   }
 }
 .banner-style1 {
-  background: url("../img/VideoBG.png") no-repeat bottom;
-  background-size: 100% 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -140,6 +139,15 @@ select {
 }
 .banner-style1 .navbar ul li a:hover {
   color: #f58220;
+}
+.banner-style1 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .banner-style2 {
@@ -306,15 +314,187 @@ select {
   position: relative;
 }
 
+.horizontal-scroll-wrapper {
+  overflow: hidden;
+}
+
+.big-text {
+  position: absolute;
+  width: 100%;
+  font-size: 240px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.4);
+  bottom: 0;
+  left: 5%;
+  z-index: 9;
+}
+
+.swiper {
+  width: 100%;
+  height: 290px;
+}
+.swiper .swiper-slide {
+  padding: 30px 5px;
+}
+.swiper .slide-content {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 34px 0 rgba(255, 255, 255, 0.7), 1px 1px 20px 0 rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.swiper .slide-content .title {
+  width: 80%;
+}
+.swiper .slide-content .title span {
+  font-size: 45px;
+  line-height: 1.22;
+  margin-bottom: 3px;
+}
+.swiper .slide-content .title a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  opacity: 0.5;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -30px;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+  background: #2b2b2b;
+  opacity: 1;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #f58220;
+}
+
+.quote-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 125px;
+  margin: 120px 0;
+}
+.quote-container img {
+  width: 335px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.quote-container .author {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  position: relative;
+}
+.quote-container .author::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -16%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 1px;
+  background-color: #2b2b2b;
+  z-index: -1;
+}
+
+.category {
+  margin: 50px 0;
+}
+.category .category-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.category .category-info .info {
+  flex: 1;
+}
+.category .category-info .info .title {
+  font-size: 70px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.category .category-info .info .subtitle {
+  font-size: 35px;
+  line-height: 1.57;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.category .category-info .info .read-more {
+  font-size: 15px;
+  font-weight: 500;
+  color: #f58220;
+  margin-top: 14px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  width: max-content;
+}
+.category .category-img {
+  flex: 1;
+}
+.category .category-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+footer {
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  line-height: 3.33;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+footer .col {
+  text-align: center;
+}
+footer span {
+  display: block;
+  text-transform: uppercase;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
+  background-color: #fbfbfb;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1470px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -327,15 +507,11 @@ body {
   margin: 160px 0 120px;
 }
 
-.big-text {
-  position: absolute;
-  width: 100%;
-  font-size: 280px;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.4);
-  bottom: 0;
-  left: 5%;
-  z-index: 9;
+.category-text {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=styles.css.map */

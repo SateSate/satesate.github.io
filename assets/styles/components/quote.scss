@@ -1,0 +1,30 @@
+.quote-container {
+  @include flex(row, center, space-between);
+  gap: 125px;
+  margin: 120px 0;
+  img {
+    width: 335px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .author {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 25px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -16%;
+      transform: translateY(-50%);
+      width: 140px;
+      height: 1px;
+      background-color: $primary;
+      z-index: -1;
+    }
+  }
+}

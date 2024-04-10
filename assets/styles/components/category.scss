@@ -1,0 +1,45 @@
+.category {
+  margin: 50px 0;
+  .category-info {
+    @include flex(row, center, space-between);
+    gap: 40px;
+    .info {
+      flex: 1;
+      .title {
+        font-size: 70px;
+        line-height: 1;
+        margin-bottom: 20px;
+      }
+      .subtitle {
+        font-size: 35px;
+        line-height: 1.57;
+        // 4 lines maximum with ellipsis
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+      .read-more {
+        font-size: 15px;
+        font-weight: 500;
+        color: $orange;
+        margin-top: 14px;
+        text-transform: uppercase;
+        @include flex(row, center, center);
+        gap: 10px;
+        margin-left: auto;
+        width: max-content;
+      }
+    }
+  }
+  .category-img {
+    flex: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+}
