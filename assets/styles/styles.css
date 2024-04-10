@@ -272,7 +272,15 @@ select {
   color: #f58220;
 }
 
+.banner-style4 {
+  height: 600px;
+  position: relative;
+}
 .banner-style4 .navbar {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  right: 35px;
   padding: 26px 40px;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(15px);
@@ -305,6 +313,23 @@ select {
 }
 .banner-style4 .navbar .logo img {
   height: 34px;
+}
+.banner-style4.industries-banner {
+  background: url("../img/industry.png") no-repeat center center/cover;
+}
+.banner-style4 .page-title {
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .slide {
