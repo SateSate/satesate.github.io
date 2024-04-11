@@ -796,6 +796,7 @@ footer span {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-top: 110px;
 }
 .partners .title {
   font-size: 60px;
