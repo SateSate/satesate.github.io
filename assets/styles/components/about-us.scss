@@ -1,0 +1,73 @@
+.stats {
+  @include flex(row, flex-start, flex-end);
+  margin-top: 70px;
+  gap: 50px;
+  .stat {
+    @include flex(row, flex-start, flex-start);
+    gap: 5px;
+    .number {
+      font-size: 80px;
+      font-weight: 300;
+      line-height: 0.8;
+    }
+    .text {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.board {
+  .title {
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 1.08;
+    position: relative;
+    top: 35px;
+  }
+  .board-members {
+    @include flex();
+    gap: 10px;
+    margin-left: auto;
+    width: max-content;
+    padding-right: 140px;
+    img {
+      width: 335px;
+      height: 425px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    .name,
+    .position {
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .position {
+      opacity: 0.5;
+    }
+  }
+}
+
+.partners {
+  @include flex(row, flex-start, flex-start);
+  .title {
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 1.08;
+    position: relative;
+    top: 35px;
+  }
+  ul {
+    margin-top: 50px;
+    li {
+      font-size: 25px;
+      line-height: 1.6;
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+}
