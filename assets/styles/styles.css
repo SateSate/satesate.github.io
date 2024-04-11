@@ -65,6 +65,12 @@ select {
   font: inherit;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -576,6 +582,7 @@ footer span {
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 .industries .industry .name {
   font-size: 45px;
@@ -613,6 +620,112 @@ footer span {
 }
 .sub-banner.industries-banner {
   background: url("../img/industry.png") no-repeat center center/cover;
+}
+
+.category-filter {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.category-filter .filter-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.category-filter .plus-sign {
+  position: relative;
+  height: 100%;
+  width: max-content;
+}
+.category-filter .plus-sign span {
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #2b2b2b;
+  transition: all 0.3s ease;
+}
+.category-filter .plus-sign span:first-child {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  transform: translate(-50%, -50%);
+}
+.category-filter .plus-sign span:last-child {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.category-filter .plus-sign span:last-child.minus {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.category-filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  overflow: hidden;
+  transform-origin: top;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  max-height: 0;
+  height: 100%;
+  margin-left: 30px;
+}
+.category-filters.show {
+  max-height: 800px;
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #2b2b2b;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 6px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  top: -2px;
+}
+
+.form-group input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 10px;
+  border: solid #2b2b2b;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 body {

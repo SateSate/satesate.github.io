@@ -13,6 +13,7 @@
       font-size: 15px;
       font-weight: 500;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
     .name {
       font-size: 45px;
@@ -57,4 +58,102 @@
   &.industries-banner {
     background: url("../img/industry.png") no-repeat center center/cover;
   }
+}
+
+.category-filter {
+  margin-top: 30px;
+  @include flex(row, flex-start, space-between);
+  .filter-title {
+    @include flex(row, center, flex-start);
+  }
+  .plus-sign {
+    position: relative;
+    height: 100%;
+    width: max-content;
+    span {
+      display: block;
+      width: 10px;
+      height: 1px;
+      background: $primary;
+      transition: all 0.3s ease;
+      &:first-child {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        transform: translate(-50%, -50%);
+      }
+      &:last-child {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        transform: translate(-50%, -50%) rotate(90deg);
+        &.minus {
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.category-filters {
+  @include flex(column, flex-start, flex-start);
+  height: 100%;
+  overflow: hidden;
+  transform-origin: top;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  max-height: 0;
+  height: 100%;
+  margin-left: 30px;
+  &.show {
+    max-height: 800px;
+  }
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid $primary;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 6px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  top: -2px;
+}
+
+.form-group input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 10px;
+  border: solid $primary;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
