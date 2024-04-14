@@ -323,9 +323,6 @@ button {
 .banner-style4.industries-banner {
   background: url("../img/industry.png") no-repeat center center/cover;
 }
-.banner-style4.about-banner {
-  background: url("../img/about-us.png") no-repeat bottom center/cover;
-}
 .banner-style4 .page-title {
   font-size: 120px;
   font-weight: 900;
@@ -339,6 +336,15 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.banner-style4 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .slide {
@@ -554,8 +560,9 @@ footer {
   align-items: center;
   font-size: 15px;
   line-height: 3.33;
-  margin-top: 100px;
-  margin-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  background-color: #fbfbfb;
 }
 footer .col {
   text-align: center;
@@ -563,6 +570,10 @@ footer .col {
 footer span {
   display: block;
   text-transform: uppercase;
+}
+
+.footer {
+  background-color: #fbfbfb;
 }
 
 .industries {
@@ -731,12 +742,78 @@ footer span {
   transform: rotate(45deg);
 }
 
+.about-banner {
+  height: 100vh;
+  position: relative;
+}
+.about-banner .navbar {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  right: 35px;
+  padding: 26px 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-banner .navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.about-banner .navbar ul li {
+  flex: 1;
+}
+.about-banner .navbar ul li a {
+  color: #2b2b2b;
+  font-size: 15px;
+  width: max-content;
+  display: block;
+  text-transform: uppercase;
+}
+.about-banner .navbar ul li a:hover {
+  color: #f58220;
+}
+.about-banner .navbar .logo img {
+  height: 34px;
+}
+.about-banner .page-title {
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-banner video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .stats {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
-  margin-top: 70px;
+  padding-top: 70px;
   gap: 50px;
 }
 .stats .stat {
@@ -816,12 +893,17 @@ footer span {
   font-size: 15px;
 }
 
+.parallax {
+  background-color: #fbfbfb;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
   background-color: #fbfbfb;
+  color: #2b2b2b;
 }
 
 .container {

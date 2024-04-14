@@ -3,8 +3,9 @@ footer {
   @include flex(row, center, space-between);
   font-size: 15px;
   line-height: 3.33;
-  margin-top: 100px;
-  margin-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  background-color: $bg;
   .col {
     text-align: center;
   }
@@ -12,4 +13,8 @@ footer {
     display: block;
     text-transform: uppercase;
   }
+}
+
+.footer {
+  background-color: $bg;
 }

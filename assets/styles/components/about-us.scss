@@ -1,6 +1,70 @@
+.about-banner {
+  height: 100vh;
+  position: relative;
+  .navbar {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    right: 35px;
+    padding: 26px 40px;
+    @include backdrop-filter();
+    border-radius: 20px;
+    @include flex(row, center, space-between);
+    ul {
+      @include flex(row, center, space-between);
+      gap: 40px;
+      li {
+        flex: 1;
+        a {
+          color: $primary;
+          font-size: 15px;
+          width: max-content;
+          display: block;
+          text-transform: uppercase;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+    .logo {
+      img {
+        height: 34px;
+      }
+    }
+  }
+  .page-title {
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    text-transform: uppercase;
+    line-height: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.4)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
 .stats {
   @include flex(row, flex-start, flex-end);
-  margin-top: 70px;
+  padding-top: 70px;
   gap: 50px;
   .stat {
     @include flex(row, flex-start, flex-start);
@@ -71,4 +135,8 @@
       }
     }
   }
+}
+
+.parallax {
+  background-color: $bg;
 }
