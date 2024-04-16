@@ -1,3 +1,13 @@
+// Lenis smooth scroll
+const lenis = new Lenis();
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // Animations
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,12 +56,32 @@ gsap.to(".big-text", {
     start: "top top",
   },
 });
-// End Animations
+
+// animate main text
+const splitTypes = document.querySelectorAll(".with-animation");
+
+splitTypes.forEach((char, i) => {
+  const text = new SplitType(char, { types: "chars" });
+  gsap.from(text.chars, {
+    scrollTrigger: {
+      trigger: char,
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: false,
+    },
+    opacity: 0.2,
+    stagger: 0.1,
+  });
+});
 
 // Slider
 const swiper = new Swiper(".swiper", {
   loop: true,
   slidesPerView: 2.5,
+  autoplay: {
+    delay: 3000,
+  },
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",

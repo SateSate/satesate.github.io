@@ -1,7 +1,6 @@
 .quote-container {
   @include flex(row, center, space-between);
   gap: 125px;
-  margin: 120px 0;
   img {
     width: 335px;
     object-fit: cover;

@@ -45,4 +45,20 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  span {
+    font-weight: 900;
+    font-size: 60px;
+  }
+  &.flexed {
+    @include flex(row, center, space-between);
+  }
+}
+
+.section-margin {
+  margin: 200px 0;
+}
+
+.arrow-link {
+  @include flex(row, center, center);
+  gap: 10px;
 }

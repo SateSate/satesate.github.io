@@ -473,7 +473,6 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 125px;
-  margin: 120px 0;
 }
 .quote-container img {
   width: 335px;
@@ -580,7 +579,7 @@ footer span {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
-  margin: 30px 0;
+  padding: 30px 0;
 }
 .industries .industry {
   background: rgba(34, 34, 34, 0.05);
@@ -641,7 +640,7 @@ footer span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 .category-filter .filter-title {
   display: flex;
@@ -693,6 +692,7 @@ footer span {
 }
 .category-filters.show {
   max-height: 800px;
+  padding: 0;
 }
 
 .form-group {
@@ -717,6 +717,7 @@ footer span {
 .form-group label:before {
   content: "";
   -webkit-appearance: none;
+  appearance: none;
   background-color: transparent;
   border: 2px solid #2b2b2b;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
@@ -740,6 +741,10 @@ footer span {
   border: solid #2b2b2b;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.filter-container {
+  padding: 200px 0 50px;
 }
 
 .about-banner {
@@ -785,11 +790,11 @@ footer span {
   height: 34px;
 }
 .about-banner .page-title {
-  font-size: 120px;
+  font-size: 200px;
   font-weight: 900;
   color: rgba(255, 255, 255, 0.4);
   position: absolute;
-  bottom: -17px;
+  bottom: -27px;
   left: 0;
   text-transform: uppercase;
   line-height: 1;
@@ -797,6 +802,9 @@ footer span {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.about-banner .page-title.industries-title {
+  bottom: -35px;
 }
 .about-banner video {
   position: fixed;
@@ -981,6 +989,28 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+.category-text span {
+  font-weight: 900;
+  font-size: 60px;
+}
+.category-text.flexed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-margin {
+  margin: 200px 0;
+}
+
+.arrow-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
