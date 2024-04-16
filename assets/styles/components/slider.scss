@@ -1,6 +1,8 @@
 .swiper {
   width: 100%;
-  height: 290px;
+  &.homepage-slider {
+    height: 290px;
+  }
   .swiper-slide {
     padding: 30px 5px;
   }

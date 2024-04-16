@@ -12,9 +12,10 @@
 @import "./components/industries.scss";
 @import "./components/about-us.scss";
 @import "./components/industries-single.scss";
+@import "./components/media.scss";
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: $sentic;
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
@@ -48,6 +49,7 @@ body {
   span {
     font-weight: 900;
     font-size: 60px;
+    font-family: $montserrat;
   }
   &.flexed {
     @include flex(row, center, space-between);
@@ -61,4 +63,17 @@ body {
 .arrow-link {
   @include flex(row, center, center);
   gap: 10px;
+}
+
+.next-industry {
+  margin-top: 160px;
+  .arrow-link {
+    border-bottom: 1px solid $primary;
+    width: max-content;
+    margin-left: auto;
+  }
+}
+
+.section {
+  position: relative;
 }

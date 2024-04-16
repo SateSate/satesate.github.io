@@ -6,6 +6,14 @@ $white: #fff;
 $orange: #f58220;
 $gray: #d8d8d8;
 
+$sentic-light: "Sentic Text Light", sans-serif;
+$sentic: "Sentic Text", sans-serif;
+$sentic-medium: "Sentic Text Medium", sans-serif;
+$sentic-bold: "Sentic Text Bold", sans-serif;
+$sentic-black: "Sentic Text Black", sans-serif;
+
+$montserrat: "Montserrat", sans-serif;
+
 // mixin
 @mixin backdrop-filter() {
   background-color: rgba(255, 255, 255, 0.5);

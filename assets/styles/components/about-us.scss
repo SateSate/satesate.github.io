@@ -21,8 +21,23 @@
           width: max-content;
           display: block;
           text-transform: uppercase;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: $primary;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+          }
           &:hover {
-            color: $orange;
+            &::before {
+              visibility: visible;
+              width: 100%;
+            }
           }
         }
       }
@@ -34,6 +49,7 @@
     }
   }
   .page-title {
+    font-family: $montserrat;
     font-size: 200px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.4);
@@ -93,6 +109,7 @@
     line-height: 1.08;
     position: relative;
     top: 35px;
+    font-family: $montserrat;
   }
   .board-members {
     @include flex();
@@ -127,6 +144,7 @@
     line-height: 1.08;
     position: relative;
     top: 35px;
+    font-family: $montserrat;
   }
   ul {
     margin-top: 50px;

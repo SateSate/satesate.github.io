@@ -1,0 +1,68 @@
+.media {
+  padding: 100px 0;
+  .title {
+    font-size: 72px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .section {
+    margin-top: 50px;
+    .section-title {
+      font-size: 48px;
+      font-weight: 300;
+    }
+    .section-subtitle {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+    .slider-item {
+      border-radius: 20px;
+      background-color: #f5f5f5;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: $orange;
+      }
+      img {
+        height: 320px;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+      }
+      .item-info {
+        padding: 30px;
+        height: 240px;
+        position: relative;
+        .item-category {
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+        .item-title {
+          font-size: 26px;
+          font-weight: 900;
+          font-family: $montserrat;
+        }
+        .read-time {
+          font-size: 16px;
+          margin-top: 10px;
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.swiper-arrow {
+  top: 22%;
+  right: 0;
+  left: unset;
+  &.arrow-left {
+    right: 65px;
+  }
+  &.arrow-right {
+    right: 15px;
+    rotate: 180deg;
+  }
+}
