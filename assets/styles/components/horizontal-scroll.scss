@@ -14,7 +14,7 @@
     position: relative;
 
     .img {
-      width: 50%;
+      width: 90%;
       height: 80%;
       position: relative;
       img {
@@ -25,7 +25,7 @@
     }
     .slide-text {
       position: absolute;
-      right: 12%;
+      right: 0;
       top: 50%;
       transform: translateY(-50%);
       width: 70%;
@@ -41,13 +41,27 @@
         font-size: 35px;
         line-height: 1.29;
       }
+      &.last-text {
+        text-align: left;
+        right: auto;
+        left: 0;
+        width: auto;
+        margin: 0 auto;
+        position: unset;
+        .title {
+          span {
+            @include flex(row, center, flex-start);
+            gap: 20px;
+          }
+        }
+      }
     }
   }
 }
 
 .horizontal-scroll {
   display: flex;
-  width: 300vw;
+  width: 350vw;
   position: relative;
   background-color: $gray;
 }

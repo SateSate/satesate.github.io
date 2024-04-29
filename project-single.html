@@ -14,7 +14,8 @@
     <div
       class="banner-style4"
       style="
-        background: url(./assets/img/edilal.png) no-repeat center center/cover;
+        background: url(./assets/img/project-single.png) no-repeat center
+          center/cover;
       "
     >
       <nav class="navbar">
@@ -32,7 +33,7 @@
           <li><a href="">En/AL</a></li>
         </ul>
       </nav>
-      <h1 class="page-title">EDIL AL</h1>
+      <h1 class="page-title">San Nicolas</h1>
     </div>
     <div class="container">
       <div class="industry-info">
@@ -57,25 +58,39 @@
         tristique senectus. Interdum posuere lorem ipsum dolor sit amet
         consectetur adipiscing. Odio morbi quis commodo odio aenean sed.
       </div>
-      <div class="ceo">
-        <div class="ceo-info">
-          <div class="name">Name Surname</div>
-          <div class="position">CEO OF EDIL AL</div>
-          <div class="quote">
-            Ullamcorper eget nulla facilisi etiam dignissim diam quis enim
-            lobortis. Quis blandit turpis cursus in. Metus aliquam eleifend mi
-            in nulla posuere sollicitudin aliquam ultrices. At volutpat diam ut
-            venenatis. Id velit ut tortor pretium
+    </div>
+    <div class="slider-container section-margin">
+      <div class="swiper project-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="project-slide">
+              <img src="./assets/img/fiori.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-slide">
+              <img src="./assets/img/lake.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-slide">
+              <img src="./assets/img/about-us.png" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-slide">
+              <img src="./assets/img/fiori.png" alt="" />
+            </div>
           </div>
         </div>
-        <div class="img">
-          <img src="./assets/img/brozi.png" alt="" />
-        </div>
       </div>
-      <div class="next-industry">
-        <a href="" class="arrow-link"
-          >NEXT INDUSTRY <img src="./assets/img/arrow-r.png" alt=""
-        /></a>
+    </div>
+    <div class="container">
+      <div class="description-text">
+        Ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis.
+        Quis blandit turpis cursus in. Metus aliquam eleifend mi in nulla
+        posuere sollicitudin aliquam ultrices. At volutpat diam ut venenatis. Id
+        velit ut tortor pretium. Ipsum nunc aliquet bibendum enim facilisis.
       </div>
     </div>
     <div class="container">
@@ -100,6 +115,33 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="./assets/script/industries.js"></script>
+    <!-- <script src="./assets/script/industries.js"></script> -->
+    <script>
+      // Slider
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        slidesPerView: 2.5,
+        autoplay: {
+          delay: 3000,
+        },
+      });
+
+      const wrapper = document.querySelector(".slider-container");
+      const container = document.querySelector(".container");
+
+      function updateWrapperPadding() {
+        const viewportWidth = window.innerWidth;
+        const containerWidth = container.offsetWidth;
+        const paddingLeft = (viewportWidth - containerWidth) / 2;
+
+        wrapper.style.paddingLeft = `${paddingLeft}px`;
+
+        swiper.update();
+      }
+
+      window.addEventListener("load", updateWrapperPadding);
+      window.addEventListener("resize", updateWrapperPadding);
+      // End Slider
+    </script>
   </body>
 </html>

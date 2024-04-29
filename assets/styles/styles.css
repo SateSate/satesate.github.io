@@ -295,7 +295,7 @@ button {
   position: relative;
 }
 .slide .slide-content .img {
-  width: 50%;
+  width: 90%;
   height: 80%;
   position: relative;
 }
@@ -306,7 +306,7 @@ button {
 }
 .slide .slide-content .slide-text {
   position: absolute;
-  right: 12%;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 70%;
@@ -323,10 +323,25 @@ button {
   font-size: 35px;
   line-height: 1.29;
 }
+.slide .slide-content .slide-text.last-text {
+  text-align: left;
+  right: auto;
+  left: 0;
+  width: auto;
+  margin: 0 auto;
+  position: unset;
+}
+.slide .slide-content .slide-text.last-text .title span {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
 
 .horizontal-scroll {
   display: flex;
-  width: 300vw;
+  width: 350vw;
   position: relative;
   background-color: #d8d8d8;
 }
@@ -975,6 +990,65 @@ footer span {
 .swiper-arrow.arrow-right {
   right: 15px;
   rotate: 180deg;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.projects .project {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+}
+.projects .project .title {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 30px;
+  font-weight: 900;
+}
+.projects .project .cat {
+  font-size: 15px;
+  color: #fff;
+}
+.projects .project .overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 200%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.projects .project .text {
+  position: relative;
+  z-index: 1;
+}
+
+.project-slider .project-slide {
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+}
+.project-slider .project-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 body {
