@@ -78,7 +78,7 @@ splitTypes.forEach((char, i) => {
 // Slider
 const swiper = new Swiper(".swiper", {
   loop: true,
-  slidesPerView: 2.5,
+  slidesPerView: 1.5,
   autoplay: {
     delay: 3000,
   },
@@ -87,17 +87,27 @@ const swiper = new Swiper(".swiper", {
     type: "bullets",
     clickable: true,
   },
+  breakpoints: {
+    1519: {
+      slidesPerView: 2.5,
+    },
+  },
 });
 
 const wrapper = document.querySelector(".slider-container");
 const container = document.querySelector(".container");
+const desktopBreakpoint = 1519;
 
 function updateWrapperPadding() {
   const viewportWidth = window.innerWidth;
   const containerWidth = container.offsetWidth;
   const paddingLeft = (viewportWidth - containerWidth) / 2;
 
-  wrapper.style.paddingLeft = `${paddingLeft}px`;
+  if (viewportWidth > desktopBreakpoint) {
+    wrapper.style.paddingLeft = `${paddingLeft}px`;
+  } else {
+    wrapper.style.paddingLeft = "20px";
+  }
 
   swiper.update();
 }
@@ -105,3 +115,12 @@ function updateWrapperPadding() {
 window.addEventListener("load", updateWrapperPadding);
 window.addEventListener("resize", updateWrapperPadding);
 // End Slider
+
+const navToggle = document.querySelector(".toggle");
+const navLinks = document.querySelector(".nav-links");
+const navbar = document.querySelector(".navbar");
+
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  navbar.classList.toggle("active");
+});

@@ -2,23 +2,36 @@
   margin: 50px 0;
   .category-info {
     @include flex(row, center, space-between);
+    @include media(xl) {
+      flex-direction: column;
+    }
     gap: 40px;
     .info {
       flex: 1;
+      @include media(xl) {
+        order: 2;
+      }
       .title {
         font-size: 70px;
         line-height: 1;
         margin-bottom: 20px;
+        @include media(xl) {
+          font-size: 39px;
+          line-height: 1.34;
+        }
       }
       .subtitle {
         font-size: 35px;
         line-height: 1.57;
-        // 4 lines maximum with ellipsis
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
+        @include media(xl) {
+          font-size: 22px;
+          line-height: 1.59;
+        }
       }
       .read-more {
         font-size: 15px;
@@ -35,11 +48,33 @@
   }
   .category-img {
     flex: 1;
+    @include media(xl) {
+      order: 1;
+      width: 100%;
+    }
     img {
       width: 100%;
       height: 100%;
+      @include media(xl) {
+        max-height: 400px;
+      }
       object-fit: cover;
       border-radius: 20px;
+    }
+  }
+  .arrow-link:not(.mobile-arrow) {
+    @include media(xl) {
+      display: none;
+    }
+  }
+  .mobile-arrow {
+    display: none;
+    @include media(xl) {
+      display: flex;
+      margin-left: auto;
+      text-transform: uppercase;
+      width: max-content;
+      margin-top: 20px;
     }
   }
 }

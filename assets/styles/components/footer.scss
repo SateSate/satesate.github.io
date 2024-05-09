@@ -6,8 +6,23 @@ footer {
   padding-top: 100px;
   padding-bottom: 30px;
   background-color: $bg;
+  @include media(xl) {
+    flex-direction: column;
+    gap: 30px;
+  }
   .col {
     text-align: center;
+    @include media(xl) {
+      &:first-child {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:last-child {
+        order: 2;
+      }
+    }
   }
   span {
     display: block;

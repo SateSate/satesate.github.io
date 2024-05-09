@@ -1,6 +1,10 @@
 .quote-container {
   @include flex(row, center, space-between);
   gap: 125px;
+  @include media(xl) {
+    flex-direction: column;
+    gap: 50px;
+  }
   img {
     width: 335px;
     object-fit: cover;
@@ -14,16 +18,22 @@
     text-transform: uppercase;
     margin-top: 25px;
     position: relative;
+    @include media(xl) {
+      text-align: right;
+    }
     &::before {
       content: "";
       position: absolute;
       top: 50%;
-      left: -16%;
+      left: -20%;
       transform: translateY(-50%);
       width: 140px;
       height: 1px;
       background-color: $primary;
       z-index: -1;
+      @include media(xl) {
+        display: none;
+      }
     }
   }
 }

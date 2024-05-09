@@ -25,14 +25,17 @@ body {
 }
 
 .container {
-  max-width: 1470px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .description-text {
   font-size: 45px;
   line-height: 1.22;
+  @include media(lg) {
+    font-size: 22px;
+  }
   &.with-margin {
     margin: 160px 0 120px;
   }
@@ -47,10 +50,15 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 20px;
+
   span {
     font-weight: 900;
     font-size: 60px;
     font-family: $montserrat;
+    @include media(md) {
+      font-size: 34px;
+      display: block;
+    }
   }
   &.flexed {
     @include flex(row, center, space-between);
@@ -59,6 +67,9 @@ body {
 
 .section-margin {
   margin: 200px 0;
+  @include media(lg) {
+    margin: 60px 0;
+  }
 }
 
 .arrow-link {

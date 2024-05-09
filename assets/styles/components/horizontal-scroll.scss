@@ -12,15 +12,25 @@
     text-align: right;
     color: $white;
     position: relative;
+    @include media(xl) {
+      @include flex(column, center, center);
+    }
 
     .img {
       width: 90%;
       height: 80%;
       position: relative;
+      @include media(xl) {
+        width: 100%;
+        border-radius: 10px;
+      }
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        @include media(xl) {
+          border-radius: 10px;
+        }
       }
     }
     .slide-text {
@@ -29,6 +39,15 @@
       top: 50%;
       transform: translateY(-50%);
       width: 70%;
+      @include media(xl) {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 20%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 300px;
+      }
       .title {
         font-size: 60px;
         font-weight: 900;
@@ -36,10 +55,18 @@
         margin-bottom: 7px;
         text-transform: uppercase;
         font-family: $montserrat;
+        @include media(xl) {
+          font-size: 30px;
+          line-height: 1.17;
+        }
       }
       .description {
         font-size: 35px;
         line-height: 1.29;
+        @include media(xl) {
+          font-size: 22px;
+          line-height: 1.59;
+        }
       }
       &.last-text {
         text-align: left;
@@ -54,6 +81,10 @@
             gap: 20px;
           }
         }
+        @include media(xl) {
+          position: unset;
+          transform: unset;
+        }
       }
     }
   }
@@ -61,7 +92,7 @@
 
 .horizontal-scroll {
   display: flex;
-  width: 350vw;
+  width: 400vw;
   position: relative;
   background-color: $gray;
 }
@@ -80,4 +111,8 @@
   left: 5%;
   z-index: 9;
   font-family: $montserrat;
+  @include media(xl) {
+    font-size: 100px;
+    bottom: -20px;
+  }
 }

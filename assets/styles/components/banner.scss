@@ -2,7 +2,7 @@
   height: 100vh;
   @include flex(row, flex-start, center);
   position: relative;
-  padding: 0 35px;
+  padding: 0 20px;
   .banner-text {
     font-size: 35px;
     color: $white;
@@ -12,55 +12,100 @@
     opacity: 0.5;
     margin-top: 220px;
   }
-  .navbar {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1440px;
+  .nav-container {
+    position: relative;
+    padding: 0 20px;
     width: 100%;
-    padding: 20px 40px;
-    @include backdrop-filter();
-    border-radius: 20px;
-    @include flex(row, center, space-between);
-    ul {
+    .navbar {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      right: 20px;
+      transform: translateX(-50%);
+      max-width: 1440px;
+      width: 100%;
+      padding: 20px 40px;
+      @include backdrop-filter();
+      border-radius: 20px;
       @include flex(row, center, space-between);
-      gap: 40px;
-      li {
-        flex: 1;
-        a {
-          color: $primary;
-          font-size: 15px;
-          width: max-content;
-          display: block;
-          text-transform: uppercase;
-          position: relative;
-          &::before {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: $primary;
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
+      &.active {
+        border-radius: 20px 20px 0 0;
+        box-shadow: none;
+        // backdrop-filter: none;
+      }
+      ul {
+        @include flex(row, center, space-between);
+        gap: 40px;
+        @include media(lg) {
+          @include flex(column, center, space-between);
+          position: absolute;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease-in-out;
+          height: 0;
+          left: 0;
+          top: 89px;
+          @include backdrop-filter();
+          border-radius: 0 0 20px 20px;
+          gap: 30px;
+          z-index: 99;
+          width: 100%;
+          box-shadow: none;
+          // backdrop-filter: none;
+          &.active {
+            max-height: 800px;
+            height: auto;
+            li {
+              &:first-child {
+                margin-top: 20px;
+              }
+              &:last-child {
+                margin-bottom: 20px;
+              }
+              a {
+                font-size: 22px;
+                font-weight: 600;
+              }
+            }
           }
-          &:hover {
+        }
+        li {
+          flex: 1;
+          a {
+            color: $primary;
+            font-size: 15px;
+            width: max-content;
+            display: block;
+            text-transform: uppercase;
+            position: relative;
             &::before {
-              visibility: visible;
-              width: 100%;
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 1px;
+              bottom: 0;
+              left: 0;
+              background-color: $primary;
+              visibility: hidden;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover {
+              &::before {
+                visibility: visible;
+                width: 100%;
+              }
             }
           }
         }
       }
-    }
-    .logo {
-      img {
-        height: 50px;
+      .logo {
+        img {
+          height: 50px;
+        }
       }
     }
   }
+
   video {
     position: absolute;
     top: 0;
@@ -70,19 +115,41 @@
     object-fit: cover;
     z-index: -1;
   }
+  .toggle {
+    display: none;
+    width: 28px;
+    @include media(lg) {
+      display: block;
+    }
+    span {
+      width: 28px;
+      height: 3px;
+      display: block;
+      background-color: white;
+      margin-bottom: 6px;
+      &:nth-child(2) {
+        width: 15.5px;
+        margin-left: auto;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
-.banner-style4 {
-  height: 600px;
+.section-banner {
+  height: 100vh;
   position: relative;
+  @include media(xl) {
+    height: 400px;
+  }
   .navbar {
     position: absolute;
     top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1440px;
-    width: 100%;
-    padding: 20px 40px;
+    left: 35px;
+    right: 35px;
+    padding: 26px 40px;
     @include backdrop-filter();
     border-radius: 20px;
     @include flex(row, center, space-between);
@@ -120,19 +187,17 @@
     }
     .logo {
       img {
-        height: 50px;
+        height: 34px;
       }
     }
   }
-  &.industries-banner {
-    background: url("../img/industry.png") no-repeat center center/cover;
-  }
   .page-title {
-    font-size: 120px;
+    font-family: $montserrat;
+    font-size: 200px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.4);
     position: absolute;
-    bottom: -17px;
+    bottom: -27px;
     left: 0;
     text-transform: uppercase;
     line-height: 1;
@@ -144,15 +209,24 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: $montserrat;
+    &.industries-title {
+      bottom: -35px;
+    }
+    @include media(xl) {
+      font-size: 55px;
+      bottom: -8px;
+    }
   }
   video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    @include media(xl) {
+      position: absolute;
+    }
   }
 }

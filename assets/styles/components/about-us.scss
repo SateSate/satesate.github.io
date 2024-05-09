@@ -1,90 +1,11 @@
-.about-banner {
-  height: 100vh;
-  position: relative;
-  .navbar {
-    position: absolute;
-    top: 30px;
-    left: 35px;
-    right: 35px;
-    padding: 26px 40px;
-    @include backdrop-filter();
-    border-radius: 20px;
-    @include flex(row, center, space-between);
-    ul {
-      @include flex(row, center, space-between);
-      gap: 40px;
-      li {
-        flex: 1;
-        a {
-          color: $primary;
-          font-size: 15px;
-          width: max-content;
-          display: block;
-          text-transform: uppercase;
-          position: relative;
-          &::before {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: $primary;
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
-          }
-          &:hover {
-            &::before {
-              visibility: visible;
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-    .logo {
-      img {
-        height: 34px;
-      }
-    }
-  }
-  .page-title {
-    font-family: $montserrat;
-    font-size: 200px;
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.4);
-    position: absolute;
-    bottom: -27px;
-    left: 0;
-    text-transform: uppercase;
-    line-height: 1;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.4)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &.industries-title {
-      bottom: -35px;
-    }
-  }
-  video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-}
-
 .stats {
   @include flex(row, flex-start, flex-end);
   padding-top: 70px;
   gap: 50px;
+  @include media(lg) {
+    @include flex(column, flex-end);
+    gap: 32px;
+  }
   .stat {
     @include flex(row, flex-start, flex-start);
     gap: 5px;
@@ -92,6 +13,9 @@
       font-size: 80px;
       font-weight: 300;
       line-height: 0.8;
+      @include media(lg) {
+        font-size: 60px;
+      }
     }
     .text {
       font-size: 15px;
