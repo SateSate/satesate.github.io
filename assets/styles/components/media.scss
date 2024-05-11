@@ -1,5 +1,8 @@
 .media {
   padding: 100px 0;
+  @include media(lg) {
+    padding: 60px 0;
+  }
   .title {
     font-size: 72px;
     margin-bottom: 20px;
@@ -58,6 +61,15 @@
   top: 22%;
   right: 0;
   left: unset;
+  @include media(lg) {
+    top: 26%;
+  }
+  @include media(md) {
+    top: 30%;
+  }
+  @media screen and (max-width: 480px) {
+    top: 36%;
+  }
   &.arrow-left {
     right: 65px;
   }

@@ -141,6 +141,10 @@
 .section-banner {
   height: 100vh;
   position: relative;
+  &.single-banner {
+    height: 600px;
+    position: relative;
+  }
   @include media(xl) {
     height: 400px;
   }
@@ -209,12 +213,13 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    &.industries-title {
-      bottom: -35px;
-    }
     @include media(xl) {
       font-size: 55px;
       bottom: -8px;
+    }
+    @include media(md) {
+      @include flex(column, flex-start, flex-start);
+      font-size: 48px;
     }
   }
   video {

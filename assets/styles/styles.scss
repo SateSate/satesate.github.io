@@ -38,9 +38,15 @@ body {
   }
   &.with-margin {
     margin: 160px 0 120px;
+    @include media(lg) {
+      margin: 60px 0;
+    }
   }
   &.with-padding {
     padding: 0 150px;
+    @include media(lg) {
+      padding: 0;
+    }
   }
 }
 

@@ -2,6 +2,10 @@
   @include flex(row, center, space-between);
   margin: 70px 0 40px;
   text-transform: uppercase;
+  @include media(lg) {
+    @include flex(column, flex-end, flex-end);
+    gap: 40px;
+  }
   .link {
     @include flex(row, center, center);
     gap: 10px;
@@ -11,6 +15,10 @@
 .ceo {
   margin-top: 75px;
   @include flex(row, center, space-between);
+  @include media(lg) {
+    @include flex(column, center, center);
+    gap: 20px;
+  }
   gap: 120px;
   .name {
     font-size: 45px;
@@ -29,9 +37,16 @@
   }
   .ceo-info {
     padding-left: 120px;
+    @include media(lg) {
+      order: 2;
+      padding-left: 0;
+    }
   }
   .img {
     flex: 0 0 325px;
+    @include media(lg) {
+      order: 1;
+    }
     img {
       width: 100%;
       height: 100%;

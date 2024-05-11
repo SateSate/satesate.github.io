@@ -65,25 +65,34 @@
           Investment extends to the field of construction, media, aggregate and
           concrete materials, vehicle sales and wholesale and retail sales.
         </div>
-        <div class="board">
-          <div class="title">BOARD OF <br />DIRECTORS</div>
-          <div class="board-members">
-            <div class="member">
-              <img src="./assets/img/bala.png" alt="" />
-              <div class="name">Ilir Balla</div>
-              <div class="position">Administrator</div>
-            </div>
-            <div class="member">
-              <img src="./assets/img/hasanaj.png" alt="" />
-              <div class="name">Klodiana Hasanaj</div>
-              <div class="position">Finance Department Director</div>
-            </div>
-            <div class="member">
-              <img src="./assets/img/brozi.png" alt="" />
-              <div class="name">Ermira Brozi</div>
-              <div class="position">Marketing and Sales Director</div>
+        <div class="board-title">BOARD OF <br />DIRECTORS</div>
+        <div class="board-container">
+          <div class="swiper board board-members">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="member">
+                  <img src="./assets/img/bala.png" alt="" />
+                  <div class="name">Ilir Balla</div>
+                  <div class="position">Administrator</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="member">
+                  <img src="./assets/img/hasanaj.png" alt="" />
+                  <div class="name">Klodiana Hasanaj</div>
+                  <div class="position">Finance Department Director</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="member">
+                  <img src="./assets/img/brozi.png" alt="" />
+                  <div class="name">Ermira Brozi</div>
+                  <div class="position">Marketing and Sales Director</div>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
         <div class="description-text with-margin with-padding">
           <div class="category-text">OUR MISSION</div>
@@ -172,6 +181,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-    <script src="./assets/script/index.js"></script>
+    <!-- <script src="./assets/script/index.js"></script> -->
+    <script>
+      const boardSlider = new Swiper(".board", {
+        loop: true,
+        slidesPerView: 1,
+        breakpoints: {
+          520: {
+            slidesPerView: 2,
+          },
+          760: {
+            slidesPerView: 3,
+          },
+        },
+        autoplay: {
+          delay: 3000,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>

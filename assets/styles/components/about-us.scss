@@ -26,42 +26,61 @@
   }
 }
 
-.board {
-  .title {
-    font-size: 60px;
-    font-weight: 900;
-    line-height: 1.08;
-    position: relative;
-    top: 35px;
-    font-family: $montserrat;
+.board-title {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.08;
+  position: relative;
+  top: 65px;
+  font-family: $montserrat;
+  z-index: 9;
+  @include media(lg) {
+    font-size: 45px;
   }
-  .board-members {
-    @include flex();
-    gap: 10px;
-    margin-left: auto;
-    width: max-content;
-    padding-right: 140px;
-    img {
-      width: 335px;
-      height: 425px;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border-radius: 10px;
+}
+
+.board-container {
+  padding-left: 300px;
+  position: relative;
+  @media screen and (max-width: 1200px) {
+    padding-left: 0;
+  }
+}
+
+.board-members {
+  img {
+    width: 335px;
+    height: 425px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    @include media(lg) {
+      width: 100%;
+      height: auto;
     }
-    .name,
-    .position {
-      font-size: 15px;
-      font-weight: 500;
-    }
-    .position {
-      opacity: 0.5;
-    }
+  }
+  .name,
+  .position {
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .position {
+    opacity: 0.5;
   }
 }
 
 .partners {
   @include flex(row, flex-start, flex-start);
+  @include media(lg) {
+    @include flex(column, flex-start, flex-start);
+  }
   margin-top: 110px;
+  .partner-list {
+    @include media(lg) {
+      order: 2;
+    }
+  }
   .title {
     font-size: 60px;
     font-weight: 900;
@@ -69,15 +88,28 @@
     position: relative;
     top: 35px;
     font-family: $montserrat;
+    @include media(lg) {
+      font-size: 45px;
+      line-height: 0.89;
+    }
   }
   ul {
     margin-top: 50px;
     li {
       font-size: 25px;
       line-height: 1.6;
+      @include media(lg) {
+        font-size: 20px;
+        line-height: 1.8;
+      }
       span {
         font-size: 15px;
       }
+    }
+  }
+  .map {
+    @include media(lg) {
+      order: 1;
     }
   }
 }

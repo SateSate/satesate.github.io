@@ -10,6 +10,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 8,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        520: {
+          slidesPerView: 2,
+        },
+        991: {
+          slidesPerView: 3,
+        },
+      },
       navigation: {
         nextEl: nextEl,
         prevEl: prevEl,
