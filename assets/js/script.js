@@ -22,23 +22,31 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 3,
     centeredSlides: true,
     loop: true,
-    loopAdditionalSlides: 1,
-    spaceBetween: 40,
-    speed: 700,
-    slideToClickedSlide: true,
+    initialSlide: 3,
     navigation: {
       nextEl: '.team-button-next',
       prevEl: '.team-button-prev',
     },
-    initialSlide: 2,
-    on: {
-      init(sw) {
-        sw.slideToLoop(1, 0);
-      },
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 0,
+      slideShadows: false,
     },
     breakpoints: {
-      0: { slidesPerView: 1, centeredSlides: true },
-      992: { slidesPerView: 3, centeredSlides: true },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      676: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        centeredSlides: false,
+        initialSlide: 1,
+        effect: 'slide',
+      },
     },
   });
 });
