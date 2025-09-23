@@ -179,6 +179,10 @@ nav {
     padding: 12px 20px;
     font-size: 18px;
   }
+
+  .nav-content li {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1200px) {
