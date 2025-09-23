@@ -159,7 +159,7 @@ nav {
   transition: all 0.4s ease;
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1500px) {
   nav {
     position: static;
     transform: none;
@@ -340,7 +340,7 @@ nav {
   }
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1500px) {
   .banner {
     height: auto;
     padding: 60px 0 80px;
