@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.legal-slider-next',
+      prevEl: '.legal-slider-prev',
     },
     effect: 'fade',
     fadeEffect: {
@@ -19,28 +19,29 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   const teamSwiper = new Swiper('.teamSwiper', {
-    slidesPerView: 3,
-    centeredSlides: true,
     loop: true,
-    initialSlide: 3,
+
     navigation: {
       nextEl: '.team-button-next',
       prevEl: '.team-button-prev',
     },
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 0,
-      slideShadows: false,
-    },
+
     breakpoints: {
       768: {
+        centeredSlides: true,
+        initialSlide: 3,
         slidesPerView: 3,
         spaceBetween: 20,
+        effect: 'coverflow',
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 0,
+          slideShadows: false,
+        },
       },
-      676: {
+      320: {
         slidesPerView: 1,
         spaceBetween: 20,
         centeredSlides: false,

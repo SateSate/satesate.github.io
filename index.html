@@ -12,10 +12,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.0/swiper-bundle.css"
-      integrity="sha512-6fa77z38zYI1sU8SpABTKGd4FA21UoVc7/SmTFlVTr8n+4o5MZgfNjkXHn7Kz9nTnk5s/y20HVKreiT7wGuOMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -76,37 +73,38 @@
       </div>
     </div>
 
+    <!-- ... existing code ... -->
     <div class="container-fluid">
       <div class="testimonial-section">
         <div class="testimonial-overlay"></div>
 
-        <div class="swiper testimonialSwiper">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              style="background-image: url('assets/img/slide-img1.png')"
-            >
-              <div class="testimonial-content">
-                <div class="service-cards flex-center">
-                  <div class="service-card">
-                    <h3>Security & Relief</h3>
-                    <div class="divider card-divider"></div>
-                    <h4>We handle the IRS so you can get back to your life.</h4>
-                    <p>
-                      Behind every tax issue is a person trying to stay afloat.
-                      We get that. And we fix it.
-                    </p>
-                  </div>
-                  <div class="service-card">
-                    <h3>Legal Strategy That Grows With Your Family.</h3>
-                    <div class="divider card-divider"></div>
-                    <h4>Smart counsel. Lasting relationships.</h4>
-                    <p>
-                      Guiding you through each generation with clarity, care,
-                      and expertise.
-                    </p>
-                  </div>
-                </div>
+        <div class="testimonial-content">
+          <!-- Service cards placed outside the swiper -->
+          <div class="service-cards flex-center">
+            <div class="service-card">
+              <h3>Security & Relief</h3>
+              <div class="divider card-divider"></div>
+              <h4>We handle the IRS so you can get back to your life.</h4>
+              <p>
+                Behind every tax issue is a person trying to stay afloat. We get
+                that. And we fix it.
+              </p>
+            </div>
+            <div class="service-card">
+              <h3>Legal Strategy That Grows With Your Family.</h3>
+              <div class="divider card-divider"></div>
+              <h4>Smart counsel. Lasting relationships.</h4>
+              <p>
+                Guiding you through each generation with clarity, care, and
+                expertise.
+              </p>
+            </div>
+          </div>
+
+          <!-- Swiper now only contains testimonial quotes -->
+          <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background: transparent">
                 <div class="testimonial-quote">
                   <p>
                     Skilled, reliable, and results-driven. Great legal insight,
@@ -114,48 +112,32 @@
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div
-              class="swiper-slide"
-              style="background-image: url('assets/img/slide-img1.png')"
-            >
-              <div class="testimonial-content">
-                <div class="service-cards flex-center">
-                  <div class="service-card">
-                    <h3>Security & Relief</h3>
-                    <div class="divider card-divider"></div>
-                    <h4>We handle the IRS so you can get back to your life.</h4>
-                    <p>
-                      Behind every tax issue is a person trying to stay afloat.
-                      We get that. And we fix it.
-                    </p>
-                  </div>
-                  <div class="service-card">
-                    <h3>Legal Strategy That Grows With Your Family.</h3>
-                    <div class="divider card-divider"></div>
-                    <h4>Smart counsel. Lasting relationships.</h4>
-                    <p>
-                      Guiding you through each generation with clarity, care,
-                      and expertise.
-                    </p>
-                  </div>
-                </div>
+              <div class="swiper-slide" style="background: transparent">
                 <div class="testimonial-quote">
                   <p>
-                    Skilled, reliable, and results-driven. Great legal insight,
-                    fair pricing, always available, and never miss a deadline.
+                    Exceptional service from start to finish. Their team made a
+                    complex legal process feel straightforward and manageable
+                    for our family.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="swiper-button-prev legal-slider-prev"></div>
           <div class="swiper-button-next legal-slider-next"></div>
         </div>
+
+        <!-- Background image moved to the testimonial-section element -->
+        <style>
+          .testimonial-section {
+            background-image: url('assets/img/slide-img1.png');
+            background-size: cover;
+            background-position: top;
+          }
+        </style>
       </div>
     </div>
+    <!-- ... existing code ... -->
 
     <div class="container-fluid">
       <div class="your-firm flex">
@@ -342,12 +324,8 @@
       </div>
     </footer>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.0/swiper-bundle.min.js"
-      integrity="sha512-uRGAgdi/3oUy3PAbQAH/kkq5zNxEj/7KZbjL2AXVaGfYNvwBqaZTLD7v/n57H2r36wkkNpmCt8TAPVD9Rdq7qQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>
