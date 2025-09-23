@@ -561,6 +561,12 @@ nav {
   overflow: hidden;
 }
 
+@media (max-width: 992px) {
+  .testimonial-section {
+    height: auto;
+  }
+}
+
 .testimonialSwiper {
   /* height: 100%; */
   width: 100%;
@@ -597,7 +603,7 @@ nav {
 
 @media (max-width: 992px) {
   .service-card {
-    padding: 35px;
+    padding: 20px;
     height: auto;
     max-width: 100%;
   }
@@ -623,19 +629,25 @@ nav {
 
 @media (max-width: 992px) {
   .service-card h3 {
-    font-size: 28px;
+    font-size: 22px;
   }
   .service-card h4 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .service-card p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 .card-divider {
   background-color: var(--primary-color);
   width: 60%;
+}
+
+@media (max-width: 992px) {
+  .card-divider {
+    margin: 10px 0;
+  }
 }
 
 .testimonial-quote p {
@@ -647,7 +659,7 @@ nav {
 
 @media (max-width: 1520px) {
   .testimonial-quote p {
-    max-width: 650px;
+    /* max-width: 650px; */
   }
 }
 
@@ -701,7 +713,7 @@ nav {
   .testimonial-content {
     justify-content: flex-start;
     gap: 80px;
-    padding: 20px;
+    padding: 20px 20px 16%;
   }
 }
 
@@ -723,22 +735,23 @@ nav {
   font-size: 55px !important;
 }
 
-@media (max-width: 767px) {
-  .legal-slider-prev:after,
-  .legal-slider-next:after {
-    font-size: 30px !important;
+@media (max-width: 992px) {
+  .legal-slider-prev,
+  .legal-slider-next {
+    width: 30px !important;
+    height: 26px !important;
   }
 }
 
 .legal-slider-prev {
   left: unset !important;
-  right: 20% !important;
+  right: 6% !important;
   top: unset !important;
   bottom: 12%;
 }
 
 .legal-slider-next {
-  right: 15% !important;
+  right: 0% !important;
   top: unset !important;
   bottom: 12%;
 }
@@ -756,11 +769,11 @@ nav {
 
 @media (max-width: 767px) {
   .legal-slider-prev {
-    bottom: 5%;
+    bottom: 3%;
   }
 
   .legal-slider-next {
-    bottom: 5%;
+    bottom: 3%;
   }
 }
 
