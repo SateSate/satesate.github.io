@@ -1,54 +1,77 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const testimonialSwiper = new Swiper('.testimonialSwiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.legal-slider-next',
-      prevEl: '.legal-slider-prev',
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true,
-    },
-    speed: 1000,
+  const $team = $('.team-slider');
+
+  $team.on('init', function () {
+    setTimeout(() => $team.slick('setPosition'), 0);
+
+    setTimeout(() => {
+      $('.team-slide').css('opacity', '1');
+    }, 100);
   });
 
-  const teamSwiper = new Swiper('.teamSwiper', {
-    loop: true,
-
-    navigation: {
-      nextEl: '.team-button-next',
-      prevEl: '.team-button-prev',
-    },
-
-    breakpoints: {
-      768: {
-        centeredSlides: true,
-        initialSlide: 3,
-        slidesPerView: 3,
-        spaceBetween: 20,
-        effect: 'coverflow',
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 0,
-          slideShadows: false,
+  $team.slick({
+    infinite: true,
+    speed: 800,
+    autoplay: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0',
+    arrows: true,
+    prevArrow: $('.team-button-prev'),
+    nextArrow: $('.team-button-next'),
+    dots: false,
+    focusOnSelect: true,
+    swipeToSlide: true,
+    variableWidth: false,
+    edgeFriction: 0.5,
+    touchThreshold: 10,
+    cssEase: 'cubic-bezier(0.33, 1, 0.68, 1)',
+    waitForAnimate: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
         },
       },
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        centeredSlides: false,
-        initialSlide: 1,
-        effect: 'slide',
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
       },
-    },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+    ],
+  });
+
+  $('.testimonial-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 1000,
+    infinite: true,
+    arrows: true,
+    prevArrow: $('.legal-slider-prev'),
+    nextArrow: $('.legal-slider-next'),
+    pauseOnHover: false,
   });
 });
 

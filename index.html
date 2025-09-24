@@ -10,10 +10,21 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
+    <!-- jQuery (required by Slick) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Slick CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -98,30 +109,27 @@
                 </p>
               </div>
             </div>
-            <div class="swiper testimonialSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background: transparent">
-                  <div class="testimonial-quote">
-                    <p>
-                      Skilled, reliable, and results-driven. Great legal
-                      insight, fair pricing, always available, and never miss a
-                      deadline.
-                    </p>
-                  </div>
+            <div class="testimonial-slider">
+              <div class="testimonial-slide">
+                <div class="testimonial-quote">
+                  <p>
+                    Skilled, reliable, and results-driven. Great legal insight,
+                    fair pricing, always available, and never miss a deadline.
+                  </p>
                 </div>
-                <div class="swiper-slide" style="background: transparent">
-                  <div class="testimonial-quote">
-                    <p>
-                      Exceptional service from start to finish. Their team made
-                      a complex legal process feel straightforward and
-                      manageable for our family.
-                    </p>
-                  </div>
+              </div>
+              <div class="testimonial-slide">
+                <div class="testimonial-quote">
+                  <p>
+                    Exceptional service from start to finish. Their team made a
+                    complex legal process feel straightforward and manageable
+                    for our family.
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="swiper-button-prev legal-slider-prev"></div>
-            <div class="swiper-button-next legal-slider-next"></div>
+            <div class="legal-slider-prev"></div>
+            <div class="legal-slider-next"></div>
           </div>
         </div>
       </div>
@@ -146,72 +154,77 @@
       <div class="container">
         <h2 class="title">The Team</h2>
 
-        <div class="swiper teamSwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide team-slide">
-              <div class="team-content">
-                <div class="team-member featured">
-                  <div class="member-info">
-                    <h3>Peter Frasca, Esq., LL.M</h3>
-                    <p>Shareholder/Director</p>
-                    <a href="#" class="bio-link">View Bio</a>
-                  </div>
-                  <div class="member-image">
-                    <img src="assets/img/person1.png" alt="Peter Frasca" />
-                  </div>
+        <!-- Slick: team slider -->
+        <div class="team-slider">
+          <!-- Slide -->
+          <div class="team-slide">
+            <div class="team-content">
+              <div class="team-member featured">
+                <div class="member-info">
+                  <h3>Peter Frasca, Esq., LL.M</h3>
+                  <p>Shareholder/Director</p>
+                  <a href="#" class="bio-link">View Bio</a>
+                </div>
+                <div class="member-image">
+                  <img src="assets/img/person1.png" alt="Peter Frasca" />
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="swiper-slide team-slide">
-              <div class="team-content">
-                <div class="team-member featured">
-                  <div class="member-info">
-                    <h3>John Smith, Esq.</h3>
-                    <p>Senior Associate</p>
-                    <a href="#" class="bio-link">View Bio</a>
-                  </div>
-                  <div class="member-image">
-                    <img src="assets/img/person2.png" alt="John Smith" />
-                  </div>
+          <!-- Slide -->
+          <div class="team-slide">
+            <div class="team-content">
+              <div class="team-member featured">
+                <div class="member-info">
+                  <h3>John Smith, Esq.</h3>
+                  <p>Senior Associate</p>
+                  <a href="#" class="bio-link">View Bio</a>
+                </div>
+                <div class="member-image">
+                  <img src="assets/img/person2.png" alt="John Smith" />
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="swiper-slide team-slide">
-              <div class="team-content">
-                <div class="team-member featured">
-                  <div class="member-info">
-                    <h3>Sarah Johnson, Esq.</h3>
-                    <p>Associate</p>
-                    <a href="#" class="bio-link">View Bio</a>
-                  </div>
-                  <div class="member-image">
-                    <img src="assets/img/person3.png" alt="Sarah Johnson" />
-                  </div>
+          <!-- Slide -->
+          <div class="team-slide">
+            <div class="team-content">
+              <div class="team-member featured">
+                <div class="member-info">
+                  <h3>Sarah Johnson, Esq.</h3>
+                  <p>Associate</p>
+                  <a href="#" class="bio-link">View Bio</a>
+                </div>
+                <div class="member-image">
+                  <img src="assets/img/person3.png" alt="Sarah Johnson" />
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="swiper-slide team-slide">
-              <div class="team-content">
-                <div class="team-member featured">
-                  <div class="member-info">
-                    <h3>Michael Lee, Esq.</h3>
-                    <p>Associate</p>
-                    <a href="#" class="bio-link">View Bio</a>
-                  </div>
-                  <div class="member-image">
-                    <img src="assets/img/person1.png" alt="Michael Lee" />
-                  </div>
+          <!-- Slide -->
+          <div class="team-slide">
+            <div class="team-content">
+              <div class="team-member featured">
+                <div class="member-info">
+                  <h3>Michael Lee, Esq.</h3>
+                  <p>Associate</p>
+                  <a href="#" class="bio-link">View Bio</a>
+                </div>
+                <div class="member-image">
+                  <img src="assets/img/person1.png" alt="Michael Lee" />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Reuse your existing arrows -->
         <div class="team-navigation">
-          <div class="swiper-button-prev team-button-prev"></div>
-          <div class="swiper-button-next team-button-next"></div>
+          <div class="team-button-prev"></div>
+          <div class="team-button-next"></div>
         </div>
       </div>
     </div>
@@ -311,8 +324,6 @@
         </div>
       </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
   </body>
