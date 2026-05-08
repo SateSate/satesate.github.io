@@ -1565,6 +1565,15 @@ nav {
   color: var(--primary-color);
 }
 
+.page-careers .section-eyebrow,
+.page-careers .career-perk-num {
+  color: var(--primary-color);
+}
+
+.page-careers .job-card:hover {
+  border-color: var(--primary-color);
+}
+
 .section-block.dark .section-eyebrow {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1763,14 +1772,8 @@ nav {
   padding: clamp(30px, 3vw, 50px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(72, 78, 104, 0.08);
-  transition: transform 250ms ease, box-shadow 250ms ease;
   display: flex;
   flex-direction: column;
-}
-
-.expertise-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(159, 35, 38, 0.1);
 }
 
 .expertise-card h3 {
@@ -1875,10 +1878,14 @@ nav {
 
 .news-featured-meta {
   font-size: 13px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 700;
+}
+
+.news-featured .news-card-link {
+  color: var(--primary-color);
 }
 
 .news-featured-body h2 {
