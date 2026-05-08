@@ -1614,6 +1614,7 @@ nav {
   max-height: 70vh;
 }
 
+.firm-grid h2,
 .firm-grid h3 {
   font-family: "Trajan", serif;
   font-size: clamp(28px, 3vw, 48px);
@@ -2112,6 +2113,7 @@ nav {
   gap: 28px;
 }
 
+.contact-info-card h2,
 .contact-info-card h3 {
   font-family: "Trajan", serif;
   font-size: clamp(24px, 2.2vw, 36px);
@@ -2198,6 +2200,7 @@ nav {
   gap: 18px;
 }
 
+.contact-form h2,
 .contact-form h3 {
   font-family: "Trajan", serif;
   font-size: clamp(24px, 2.2vw, 36px);
