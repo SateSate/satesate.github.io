@@ -66,13 +66,7 @@
       <div class="container">
         <div class="contact-grid">
           <div class="contact-info-card">
-            <div>
-              <h2>Lui & Frasca, P.C.</h2>
-              <p class="lead">
-                We meet with clients in person, by telephone, or by video
-                conference — at your convenience.
-              </p>
-            </div>
+            <h2>Lui & Frasca, P.C.</h2>
 
             <div class="contact-info-row">
               <div class="contact-icon" aria-hidden="true">
@@ -141,25 +135,6 @@
               </div>
             </div>
 
-            <div class="contact-info-row">
-              <div class="contact-icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <div>
-                <h4>Hours</h4>
-                <p>Monday – Friday<br />8:30am – 5:30pm ET</p>
-              </div>
-            </div>
           </div>
 
           <form
@@ -167,59 +142,23 @@
             onsubmit="event.preventDefault(); alert('Thank you. We will be in touch shortly.'); this.reset();"
           >
             <h2>Comments or questions are welcome</h2>
-            <p class="lead">
-              Briefly describe how we may assist you. All correspondence is
-              treated as confidential.
-            </p>
 
-            <div class="form-row">
-              <div class="form-field">
-                <label for="firstName">First Name</label>
-                <input id="firstName" name="firstName" type="text" required />
-              </div>
-              <div class="form-field">
-                <label for="lastName">Last Name</label>
-                <input id="lastName" name="lastName" type="text" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required />
-              </div>
-              <div class="form-field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" />
-              </div>
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
             </div>
 
             <div class="form-field">
-              <label for="topic">How can we help?</label>
-              <select id="topic" name="topic" required>
-                <option value="" disabled selected>Select a topic</option>
-                <option>Estate & Trust Planning</option>
-                <option>Estate & Trust Administration</option>
-                <option>Taxation</option>
-                <option>Business Law</option>
-                <option>Elder Law & Medicaid</option>
-                <option>Fiduciary Services</option>
-                <option>Careers</option>
-                <option>Other</option>
-              </select>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
             </div>
 
             <div class="form-field">
               <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="A few sentences are sufficient. We will follow up to learn more."
-                required
-              ></textarea>
+              <textarea id="message" name="message" required></textarea>
             </div>
 
-            <button type="submit" class="form-submit">Send Message</button>
+            <button type="submit" class="form-submit">Submit</button>
           </form>
         </div>
 
@@ -228,7 +167,7 @@
             src="https://www.google.com/maps?q=450+Lexington+Street,+Newton,+MA+02466&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Lui & Franca office location"
+            title="Lui & Frasca office location"
             allowfullscreen
           ></iframe>
         </div>
