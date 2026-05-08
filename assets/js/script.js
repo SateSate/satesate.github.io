@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     variableWidth: false,
     edgeFriction: 0.5,
     touchThreshold: 10,
-    cssEase: 'cubic-bezier(0.33, 1, 0.68, 1)',
+    cssEase: 'cubic-bezier(0.22, 1, 0.36, 1)',
     waitForAnimate: true,
     responsive: [
       {
