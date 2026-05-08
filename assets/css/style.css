@@ -1602,7 +1602,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(40px, 6vw, 100px);
-  align-items: center;
+  align-items: start;
 }
 
 .firm-grid img {
@@ -1680,10 +1680,16 @@ nav {
 
 .value-card h4 {
   font-family: "Trajan", serif;
-  font-size: clamp(22px, 2vw, 32px);
+  font-size: clamp(18px, 1.5vw, 24px);
   color: var(--dark-gray-color);
   margin-bottom: 12px;
   line-height: 1.2;
+}
+
+@media (min-width: 1101px) {
+  .value-card h4 {
+    white-space: nowrap;
+  }
 }
 
 .value-card p {
@@ -1780,10 +1786,16 @@ nav {
 .expertise-card h3 {
   font-family: "Trajan", serif;
   color: var(--primary-color);
-  font-size: clamp(22px, 2.1vw, 32px);
+  font-size: clamp(18px, 1.6vw, 24px);
   margin-bottom: 14px;
   line-height: 1.2;
   overflow-wrap: break-word;
+}
+
+@media (min-width: 993px) {
+  .expertise-card h3 {
+    white-space: nowrap;
+  }
 }
 
 .expertise-card .card-divider {
@@ -1812,7 +1824,7 @@ nav {
   color: var(--secondary-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .expertise-grid {
     grid-template-columns: 1fr;
   }
@@ -1824,6 +1836,10 @@ nav {
   padding: clamp(60px, 8vw, 110px) clamp(20px, 4vw, 60px);
   border-radius: 24px;
   text-align: center;
+}
+
+.page-expertise .cta-banner {
+  border-radius: 0;
 }
 
 .cta-banner h2 {
@@ -2345,4 +2361,37 @@ nav {
 
 .nav-link.is-active {
   color: var(--primary-color);
+}
+
+/* ============= ACCESSIBILITY: keyboard focus ============= */
+
+.btn-primary:focus-visible,
+.btn-outline:focus-visible,
+.form-submit:focus-visible,
+.nav-button:focus-visible,
+.banner-btn:focus-visible,
+.your-firm-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.nav-link:focus-visible,
+.news-card-link:focus-visible,
+.bio-link:focus-visible,
+.contact-info-row a:focus-visible,
+.footer-menu a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.contact-info-card a:focus-visible {
+  outline-color: #fff;
+}
+
+.team-button-prev:focus-visible,
+.team-button-next:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 6px;
+  border-radius: 4px;
 }
