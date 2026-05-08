@@ -2137,14 +2137,26 @@ nav {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-family: "Trajan", serif;
-  font-size: 18px;
   color: #fff;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-grid .contact-form {
+  order: 1;
+}
+
+.contact-grid .contact-info-card {
+  order: 2;
 }
 
 .contact-info-row h4 {
@@ -2164,8 +2176,15 @@ nav {
   display: block;
 }
 
+.contact-info-row a {
+  text-decoration: none;
+  transition: opacity 200ms ease;
+}
+
 .contact-info-row a:hover {
-  color: var(--secondary-color);
+  opacity: 0.75;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .contact-form {
@@ -2244,6 +2263,7 @@ nav {
 
 .form-field textarea {
   min-height: 150px;
+  max-height: 400px;
   resize: vertical;
 }
 
