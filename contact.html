@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Lui & Franca Attorneys at Law</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <nav class="flex">
+          <div class="logo">
+            <a href="index.html"
+              ><img src="assets/img/logo.png" alt="Lui & Franca Logo"
+            /></a>
+          </div>
+
+          <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="nav-wrapper">
+            <ul class="nav-content flex">
+              <li><a href="the-firm.html" class="nav-link">The Firm</a></li>
+              <li><a href="expertise.html" class="nav-link">Expertise</a></li>
+              <li><a href="updates.html" class="nav-link">Updates</a></li>
+              <li><a href="careers.html" class="nav-link">Careers</a></li>
+              <li>
+                <a href="contact.html" class="nav-link is-active">Contact</a>
+              </li>
+            </ul>
+            <a href="#" class="nav-button">Client Portal</a>
+          </div>
+        </nav>
+      </div>
+
+      <section class="page-hero">
+        <div class="page-hero-content">
+          <div class="page-hero-eyebrow">Get in Touch</div>
+          <h1>Contact</h1>
+          <div class="divider"></div>
+          <p>
+            We can provide the necessary sophisticated planning, but we are
+            also sensitive to and experienced with the family and personal
+            issues that are important to our clients.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <div>
+              <h3>Lui & Frasca, P.C.</h3>
+              <p class="lead">
+                We meet clients in person, by phone, or over video —
+                whichever works for your schedule.
+              </p>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-icon" aria-hidden="true">A</div>
+              <div>
+                <h4>Address</h4>
+                <p>
+                  450 Lexington Street, Suite 104<br />
+                  Newton, MA 02466
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-icon" aria-hidden="true">P</div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+17814317000">(781) 431-7000</a>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-icon" aria-hidden="true">F</div>
+              <div>
+                <h4>Fax</h4>
+                <a href="tel:+16175587708">(617) 558-7708</a>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-icon" aria-hidden="true">H</div>
+              <div>
+                <h4>Hours</h4>
+                <p>Monday – Friday<br />8:30am – 5:30pm ET</p>
+              </div>
+            </div>
+          </div>
+
+          <form
+            class="contact-form"
+            onsubmit="event.preventDefault(); alert('Thank you — we will be in touch shortly.'); this.reset();"
+          >
+            <h3>Comments or questions are welcome</h3>
+            <p class="lead">
+              Tell us a bit about what's on your mind. Everything you share
+              is confidential.
+            </p>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">First Name</label>
+                <input id="firstName" name="firstName" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" name="lastName" type="text" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="topic">How can we help?</label>
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option>Estate & Trust Planning</option>
+                <option>Estate & Trust Administration</option>
+                <option>Taxation</option>
+                <option>Business Law</option>
+                <option>Elder Law & Medicaid</option>
+                <option>Fiduciary Services</option>
+                <option>Careers</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="A few sentences is plenty — we'll follow up to learn more."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+        </div>
+
+        <div class="map-block" aria-label="Office location map">
+          <iframe
+            src="https://www.google.com/maps?q=450+Lexington+Street,+Newton,+MA+02466&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lui & Franca office location"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fluid footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <div class="footer-logo">
+              <img src="assets/img/logo.png" alt="Lui & Frasca P.C." />
+            </div>
+            <div class="footer-address">
+              <p>450 Lexington Street,</p>
+              <p>Suite 104</p>
+              <p>Newton, MA 02466</p>
+            </div>
+          </div>
+
+          <div class="footer-navigation">
+            <ul class="footer-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="the-firm.html">The Firm</a></li>
+              <li><a href="index.html#team">Team</a></li>
+              <li><a href="updates.html">Updates</a></li>
+              <li><a href="careers.html">Career</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright flex">
+          <div class="footer-copyright">
+            <p>2025 Copyright</p>
+          </div>
+          <div class="footer-credit">
+            <p>Crafted by APC Integrated</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

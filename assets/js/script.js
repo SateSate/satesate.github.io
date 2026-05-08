@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if (typeof $ === 'undefined' || typeof $.fn.slick !== 'function') return;
+
   const $team = $('.team-slider');
+  const $testimonial = $('.testimonial-slider');
 
   // Maintain a stable custom class on the centered slide AND its clones,
   // so the size/styling stays correct even during Slick's silent
@@ -22,21 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  $team.on('init', function (event, slick) {
-    setTimeout(() => $team.slick('setPosition'), 0);
-    setTimeout(() => $('.team-slide').css('opacity', '1'), 100);
-    syncCenterMarker(slick);
-  });
+  if ($team.length) {
+    $team.on('init', function (event, slick) {
+      setTimeout(() => $team.slick('setPosition'), 0);
+      setTimeout(() => $('.team-slide').css('opacity', '1'), 100);
+      syncCenterMarker(slick);
+    });
 
-  $team.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    syncCenterMarker(slick, nextSlide);
-  });
+    $team.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      syncCenterMarker(slick, nextSlide);
+    });
 
-  $team.on('afterChange', function (event, slick) {
-    syncCenterMarker(slick);
-  });
+    $team.on('afterChange', function (event, slick) {
+      syncCenterMarker(slick);
+    });
 
-  $team.slick({
+    $team.slick({
     infinite: true,
     speed: 800,
     autoplay: false,
@@ -84,28 +88,33 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
     ],
-  });
+    });
+  }
 
-  $('.testimonial-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
-    cssEase: 'linear',
-    autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 1000,
-    infinite: true,
-    arrows: true,
-    prevArrow: $('.legal-slider-prev'),
-    nextArrow: $('.legal-slider-next'),
-    pauseOnHover: false,
-  });
+  if ($testimonial.length) {
+    $testimonial.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 5000,
+      speed: 1000,
+      infinite: true,
+      arrows: true,
+      prevArrow: $('.legal-slider-prev'),
+      nextArrow: $('.legal-slider-next'),
+      pauseOnHover: false,
+    });
+  }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const navWrapper = document.querySelector('.nav-wrapper');
   const body = document.body;
+
+  if (!hamburgerMenu || !navWrapper) return;
 
   const menuOverlay = document.createElement('div');
   menuOverlay.classList.add('menu-overlay');
