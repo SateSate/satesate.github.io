@@ -1152,8 +1152,13 @@ nav {
 }
 
 .team-slider .team-slide {
-  padding: 10px 0;
+  display: block;
+  width: 100%;
+  padding: 10px 30px;
+  box-sizing: border-box;
   overflow: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .team-member .member-image {
@@ -1179,8 +1184,6 @@ nav {
   transition: opacity 0.2s;
   float: none;
   height: auto;
-  display: flex;
-  justify-content: center;
 }
 .team-section .is-current-center {
   opacity: 1;
@@ -1265,14 +1268,37 @@ nav {
   }
 }
 .team-slider {
-  margin: 0 -15px;
+  margin: 0;
 }
 
-.team-slide {
-  padding: 0 15px;
-  box-sizing: border-box;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+.team-section .slick-slide.is-prev-center .team-content,
+.team-section .slick-slide.is-prev-center .team-member {
+  align-items: flex-start;
+}
+
+.team-section .slick-slide.is-prev-center .team-member .member-image,
+.team-section .slick-slide.is-prev-center .team-member .member-info {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.team-section .slick-slide.is-next-center .team-content,
+.team-section .slick-slide.is-next-center .team-member {
+  align-items: flex-end;
+}
+
+.team-section .slick-slide.is-next-center .team-member .member-image,
+.team-section .slick-slide.is-next-center .team-member .member-info {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.team-section .slick-slide.is-prev-center .team-slide {
+  padding-left: 0;
+}
+
+.team-section .slick-slide.is-next-center .team-slide {
+  padding-right: 0;
 }
 
 .testimonial-slider {
@@ -2268,6 +2294,12 @@ nav {
 
 .contact-info-card a:focus-visible {
   outline-color: #fff;
+}
+
+.hamburger-menu:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .team-button-prev:focus-visible,

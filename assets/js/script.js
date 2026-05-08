@@ -10,19 +10,38 @@ document.addEventListener('DOMContentLoaded', function () {
   function syncCenterMarker(slick, targetIndex) {
     const $slider = slick.$slider;
     const slideCount = slick.slideCount;
-    $slider.find('.slick-slide').removeClass('is-current-center');
+    $slider
+      .find('.slick-slide')
+      .removeClass('is-current-center is-prev-center is-next-center');
 
     const normalize = (i) => ((i % slideCount) + slideCount) % slideCount;
     const target = targetIndex !== undefined
       ? normalize(targetIndex)
       : normalize(slick.slickCurrentSlide());
 
+    // Tag every slide whose normalized index matches the target as the
+    // current center (covers the original and all of its clones, so the
+    // size/styling is stable through slick's silent track wrap).
     $slider.find('.slick-slide').each(function () {
       const idx = parseInt($(this).attr('data-slick-index'), 10);
       if (!isNaN(idx) && normalize(idx) === target) {
         $(this).addClass('is-current-center');
       }
     });
+
+    // Tag the visually adjacent slides via DOM siblings of the active one.
+    // We pick the .slick-active match so we land on the slide that's actually
+    // being rendered at the visible center, not an off-screen clone.
+    const $active = $slider
+      .find('.slick-slide.is-current-center.slick-active')
+      .first();
+    const $center = $active.length
+      ? $active
+      : $slider.find('.slick-slide.is-current-center').first();
+    if ($center.length) {
+      $center.prevAll('.slick-slide').first().addClass('is-prev-center');
+      $center.nextAll('.slick-slide').first().addClass('is-next-center');
+    }
   }
 
   if ($team.length) {
@@ -116,32 +135,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!hamburgerMenu || !navWrapper) return;
 
+  // A11y: announce the hamburger as an interactive control.
+  hamburgerMenu.setAttribute('role', 'button');
+  hamburgerMenu.setAttribute('tabindex', '0');
+  hamburgerMenu.setAttribute('aria-label', 'Toggle navigation menu');
+  hamburgerMenu.setAttribute('aria-expanded', 'false');
+  hamburgerMenu.setAttribute('aria-controls', 'site-nav');
+  navWrapper.id = navWrapper.id || 'site-nav';
+
   const menuOverlay = document.createElement('div');
   menuOverlay.classList.add('menu-overlay');
   body.appendChild(menuOverlay);
 
-  hamburgerMenu.addEventListener('click', function () {
-    hamburgerMenu.classList.toggle('active');
-    navWrapper.classList.toggle('active');
-    menuOverlay.classList.toggle('active');
-    body.classList.toggle('no-scroll');
-  });
+  function openMenu() {
+    hamburgerMenu.classList.add('active');
+    navWrapper.classList.add('active');
+    menuOverlay.classList.add('active');
+    body.classList.add('no-scroll');
+    hamburgerMenu.setAttribute('aria-expanded', 'true');
+  }
 
-  menuOverlay.addEventListener('click', function () {
+  function closeMenu() {
     hamburgerMenu.classList.remove('active');
     navWrapper.classList.remove('active');
     menuOverlay.classList.remove('active');
     body.classList.remove('no-scroll');
+    hamburgerMenu.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleMenu() {
+    if (hamburgerMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  hamburgerMenu.addEventListener('click', toggleMenu);
+
+  hamburgerMenu.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  menuOverlay.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && hamburgerMenu.classList.contains('active')) {
+      closeMenu();
+      hamburgerMenu.focus();
+    }
   });
 
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-      hamburgerMenu.classList.remove('active');
-      navWrapper.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      body.classList.remove('no-scroll');
-    });
+    link.addEventListener('click', closeMenu);
   });
 
   if (!document.getElementById('no-scroll-style')) {
