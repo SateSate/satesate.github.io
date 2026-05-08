@@ -1885,10 +1885,6 @@ nav {
   font-weight: 700;
 }
 
-.news-featured .news-card-link {
-  color: var(--primary-color);
-}
-
 .news-featured-body h2 {
   font-family: "Trajan", serif;
   font-size: clamp(26px, 2.6vw, 44px);
@@ -1947,7 +1943,7 @@ nav {
 
 .news-card-meta {
   font-size: 13px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 700;
@@ -1970,7 +1966,7 @@ nav {
 .news-card-link {
   font-size: 14px;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-top: auto;
@@ -2053,11 +2049,10 @@ nav {
   gap: 24px;
   align-items: center;
   border: 1px solid rgba(72, 78, 104, 0.12);
-  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  transition: box-shadow 200ms ease, border-color 200ms ease;
 }
 
 .job-card:hover {
-  transform: translateY(-2px);
   border-color: var(--secondary-color);
   box-shadow: 0 10px 30px rgba(159, 35, 38, 0.08);
 }
@@ -2280,14 +2275,14 @@ nav {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   cursor: pointer;
-  transition: background-color 200ms ease;
+  transition: opacity 200ms ease;
   align-self: flex-start;
   border: none;
   font-family: inherit;
 }
 
 .form-submit:hover {
-  background-color: var(--secondary-color);
+  opacity: 0.9;
 }
 
 @media (max-width: 900px) {
@@ -2320,11 +2315,11 @@ nav {
   border-radius: 30px;
   font-weight: 700;
   font-size: clamp(14px, 1.2vw, 18px);
-  transition: background-color 200ms ease;
+  transition: opacity 200ms ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-color);
+  opacity: 0.9;
 }
 
 .btn-outline {
