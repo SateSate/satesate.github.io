@@ -1,12 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
   const $team = $('.team-slider');
 
-  $team.on('init', function () {
-    setTimeout(() => $team.slick('setPosition'), 0);
+  // Maintain a stable custom class on the centered slide AND its clones,
+  // so the size/styling stays correct even during Slick's silent
+  // track-repositioning at infinite-mode wrap.
+  function syncCenterMarker(slick, targetIndex) {
+    const $slider = slick.$slider;
+    const slideCount = slick.slideCount;
+    $slider.find('.slick-slide').removeClass('is-current-center');
 
-    setTimeout(() => {
-      $('.team-slide').css('opacity', '1');
-    }, 100);
+    const normalize = (i) => ((i % slideCount) + slideCount) % slideCount;
+    const target = targetIndex !== undefined
+      ? normalize(targetIndex)
+      : normalize(slick.slickCurrentSlide());
+
+    $slider.find('.slick-slide').each(function () {
+      const idx = parseInt($(this).attr('data-slick-index'), 10);
+      if (!isNaN(idx) && normalize(idx) === target) {
+        $(this).addClass('is-current-center');
+      }
+    });
+  }
+
+  $team.on('init', function (event, slick) {
+    setTimeout(() => $team.slick('setPosition'), 0);
+    setTimeout(() => $('.team-slide').css('opacity', '1'), 100);
+    syncCenterMarker(slick);
+  });
+
+  $team.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    syncCenterMarker(slick, nextSlide);
+  });
+
+  $team.on('afterChange', function (event, slick) {
+    syncCenterMarker(slick);
   });
 
   $team.slick({
