@@ -520,7 +520,7 @@ nav {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 992px) {
   .your-firm {
     height: auto;
     display: block;
