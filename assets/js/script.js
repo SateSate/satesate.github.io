@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.team-button-prev'),
     nextArrow: $('.team-button-next'),
     dots: false,
-    focusOnSelect: true,
+    focusOnSelect: false,
     swipeToSlide: true,
     variableWidth: false,
     edgeFriction: 0.5,

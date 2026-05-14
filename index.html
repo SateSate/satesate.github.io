@@ -157,102 +157,99 @@
       <div class="container">
         <h2 class="title">The Team</h2>
 
-        <!-- Slick: team slider -->
+        <!--
+          Slick: team slider.
+          Each slide is a single anchor (.team-card-link) wrapping the whole
+          card so the entire card is clickable. The inner "View Bio" was an
+          <a> originally; it's now a <span> to avoid nested-anchor invalid
+          HTML. Slick is configured with focusOnSelect: false (see
+          assets/js/script.js) so the click navigates instead of just
+          re-centering the slide.
+        -->
         <div class="team-slider">
-          <!-- Slide -->
           <div class="team-slide">
-            <div class="team-content">
-              <div class="team-member featured">
-                <div class="member-info">
-                  <h3>Peter Frasca, Esq., LL.M</h3>
-                  <p>Shareholder/Director</p>
-                  <a href="#" class="bio-link">View Bio</a>
-                </div>
-                <div class="member-image">
-                  <img src="assets/img/person1.png" alt="Peter Frasca" />
+            <a href="peter-frasca.html" class="team-card-link">
+              <div class="team-content">
+                <div class="team-member featured">
+                  <div class="member-info">
+                    <h3>Peter Frasca, Esq., LL.M</h3>
+                    <p>Shareholder/Director</p>
+                    <span class="bio-link">View Bio</span>
+                  </div>
+                  <div class="member-image">
+                    <img src="assets/img/person1.png" alt="Peter Frasca" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Slide -->
           <div class="team-slide">
-            <div class="team-content">
-              <div class="team-member featured">
-                <div class="member-info">
-                  <h3>Richard Lui, Esq., LL.M.</h3>
-                  <p>Shareholder/Director</p>
-                  <a href="#" class="bio-link">View Bio</a>
-                </div>
-                <div class="member-image">
-                  <img src="assets/img/person3.png" alt="Richard Lui" />
+            <a href="richard-lui.html" class="team-card-link">
+              <div class="team-content">
+                <div class="team-member featured">
+                  <div class="member-info">
+                    <h3>Richard Lui, Esq., LL.M.</h3>
+                    <p>Shareholder/Director</p>
+                    <span class="bio-link">View Bio</span>
+                  </div>
+                  <div class="member-image">
+                    <img src="assets/img/person3.png" alt="Richard Lui" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Slide -->
           <div class="team-slide">
-            <div class="team-content">
-              <div class="team-member featured">
-                <div class="member-info">
-                  <h3>Jonathan Laramie, Esq.</h3>
-                  <p>Associate</p>
-                  <a href="#" class="bio-link">View Bio</a>
-                </div>
-                <div class="member-image">
-                  <img src="assets/img/person2.png" alt="Jonathan Laramie" />
+            <a href="jonathan-laramie.html" class="team-card-link">
+              <div class="team-content">
+                <div class="team-member featured">
+                  <div class="member-info">
+                    <h3>Jonathan Laramie, Esq.</h3>
+                    <p>Associate</p>
+                    <span class="bio-link">View Bio</span>
+                  </div>
+                  <div class="member-image">
+                    <img src="assets/img/person2.png" alt="Jonathan Laramie" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Slide (repeated to ensure no back-to-back duplicates during carousel rotation) -->
           <div class="team-slide">
-            <div class="team-content">
-              <div class="team-member featured">
-                <div class="member-info">
-                  <h3>Peter Frasca, Esq., LL.M</h3>
-                  <p>Shareholder/Director</p>
-                  <a href="#" class="bio-link">View Bio</a>
-                </div>
-                <div class="member-image">
-                  <img src="assets/img/person1.png" alt="Peter Frasca" />
+            <a href="sabrina-mazzeo.html" class="team-card-link">
+              <div class="team-content">
+                <div class="team-member featured">
+                  <div class="member-info">
+                    <h3>Sabrina Mazzeo</h3>
+                    <p>Legal Assistant</p>
+                    <span class="bio-link">View Bio</span>
+                  </div>
+                  <div class="member-image">
+                    <img src="assets/img/person2.png" alt="Sabrina Mazzeo" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Slide -->
           <div class="team-slide">
-            <div class="team-content">
-              <div class="team-member featured">
-                <div class="member-info">
-                  <h3>Richard Lui, Esq., LL.M.</h3>
-                  <p>Shareholder/Director</p>
-                  <a href="#" class="bio-link">View Bio</a>
-                </div>
-                <div class="member-image">
-                  <img src="assets/img/person3.png" alt="Richard Lui" />
+            <a href="eduardo-morales.html" class="team-card-link">
+              <div class="team-content">
+                <div class="team-member featured">
+                  <div class="member-info">
+                    <h3>Eduardo Morales</h3>
+                    <p>Legal Assistant</p>
+                    <span class="bio-link">View Bio</span>
+                  </div>
+                  <div class="member-image">
+                    <img src="assets/img/person3.png" alt="Eduardo Morales" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Slide -->
-          <div class="team-slide">
-            <div class="team-content">
-              <div class="team-member featured">
-                <div class="member-info">
-                  <h3>Jonathan Laramie, Esq.</h3>
-                  <p>Associate</p>
-                  <a href="#" class="bio-link">View Bio</a>
-                </div>
-                <div class="member-image">
-                  <img src="assets/img/person2.png" alt="Jonathan Laramie" />
-                </div>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
 
