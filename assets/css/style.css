@@ -1403,7 +1403,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(80px, 14vw, 200px) 20px clamp(50px, 7vw, 100px);
+  padding: clamp(80px, 14vw, 200px) 20px clamp(60px, 8vw, 120px);
   text-align: center;
   overflow: hidden;
 }
@@ -1457,6 +1457,15 @@ nav {
 
 .section-block {
   padding: clamp(60px, 8vw, 120px) 0;
+}
+
+/*
+ * CTA sections sit directly above the footer and have their own internal
+ * padding via .cta-banner. Drop the section's top padding so the banner
+ * isn't preceded by a redundant gray gap.
+ */
+.section-block:has(.cta-banner) {
+  padding-top: 0;
 }
 
 .section-block.alt {
